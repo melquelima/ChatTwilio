@@ -3,6 +3,11 @@ from flask import request
 from app.models import *
 from twilio.twiml.messaging_response import MessagingResponse
 
+@app.route("/")
+def home():
+    return "OK"
+
+
 @app.route("/sms", methods=['GET', 'POST'])
 def sms_reply():
     resp = MessagingResponse()
