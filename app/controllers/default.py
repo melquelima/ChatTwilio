@@ -64,6 +64,8 @@ def sms_reply():
         Status.query.delete()
         db.session.commit()
         last = None
+        resp.message("chat resetado!")
+        return str(resp)
 
     if not last:
         p = Perguntas.query.filter_by(ordem=0).first()
